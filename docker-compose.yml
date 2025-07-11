@@ -22,5 +22,5 @@ service:
       - redis_data:/data
 
 volumes:
-  postres_data:
+  postgres_data:
   redis_data:
