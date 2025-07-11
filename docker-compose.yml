@@ -1,0 +1,26 @@
+version: '3.8'
+
+service:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - postgress_data:/var/lib/postgregl/data
+
+  redis:
+    image: redis:latest
+    container: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postres_data:
+  redis_data:
