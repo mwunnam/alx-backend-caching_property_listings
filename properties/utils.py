@@ -5,7 +5,7 @@ def get_all_properties():
     properties = cache.get('all_properties')
 
     if not properties:
-        properties = list(Property.objects.values())
+        properties = list(Property.objects.all())
         cache.set('all_property', properties, timeout=3600)
 
     return properties
